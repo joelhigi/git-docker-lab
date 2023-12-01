@@ -1,0 +1,19 @@
+version: '3'
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:80"
+  backend:
+    build: ./backend
+    ports:
+      - "8800:8800"
+    depends_on:
+      - db
+  db:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: toor
+      MYSQL_DATABASE: book_db
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql

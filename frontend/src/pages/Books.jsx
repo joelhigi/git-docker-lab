@@ -36,7 +36,7 @@ const Books=()=> {
           <div className="book" key={book.id}>
             {book.cover && <img src="" alt="" />}
             <h2>{book.title}</h2>
-            <p>{book.desc}</p>
+            <p>{book.descrip}</p>
              <span>{book.price}</span>
              <button className='delete' onClick={()=>handleDelete(book.id)}>Delete</button>
              <button className='update'><Link to={`/update/${book.id}`}>Update</Link></button>

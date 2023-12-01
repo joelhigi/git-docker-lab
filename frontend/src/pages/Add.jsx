@@ -5,7 +5,7 @@ import {useNavigate} from "react-router-dom"
 const Add=()=> {
   const [book,setBook]=useState({
     title:"",
-    desc:"",
+    descrip:"",
     price:null,
     cover:"",
   });
@@ -15,7 +15,6 @@ const Add=()=> {
   const handleChange=(e)=>{
     setBook((prev)=>({ ...prev, [e.target.name]:e.target.value}));
   };
-  console.log(book)
   
   const handleClick =async e=>{
     e.preventDefault()
@@ -36,9 +35,9 @@ const Add=()=> {
       />
       <input
       type='text'
-      placeholder='Discription'
+      placeholder='Description'
       onChange={handleChange}
-      name='desc'
+      name='descrip'
       />
       <input
       type='number'

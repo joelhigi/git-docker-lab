@@ -8,8 +8,8 @@ const app =express()
 const db=mysql.createConnection({
     host:"localhost",
     user:"root",
-    password:"root",
-    database:"test"
+    password:"toor",
+    database:"book_db"
 })
 
 // to send from html body
@@ -29,11 +29,11 @@ app.get("/book",(req,res)=>{
 })
 
 app.post("/book",(req,res)=>{
-    const q ="INSERT INTO books (`title`,`desc`,`price`,`cover`) VALUES (?)";
-    // const values=["title from backend","desc from backend","cover pic from backend"];
+    const q ="INSERT INTO books (`title`,`descrip`,`price`,`cover`) VALUES (?)";
+    // const values=["title from backend","descrip from backend","cover pic from backend"];
     const values=[
         req.body.title,
-        req.body.desc,
+        req.body.descrip,
         req.body.price,
         req.body.cover
     ]
@@ -56,10 +56,10 @@ app.delete("/book/:id", (req,res)=>{
 
 app.put("/book/:id", (req,res)=>{
     const bookId=req.params.id;
-    const q="UPDATE books SET `title`=?,`desc`=?,`price`=?,`cover`=? WHERE id=?"
+    const q="UPDATE books SET `title`=?,`descrip`=?,`price`=?,`cover`=? WHERE id=?"
     const values=[
         req.body.title,
-        req.body.desc,
+        req.body.descrip,
         req.body.price,
         req.body.cover
     ]
@@ -70,5 +70,5 @@ app.put("/book/:id", (req,res)=>{
 })
 
 app.listen(8800,()=>{
-    console.log("Connect to backend.")
+    console.log("Backend running on port 8800")
 })

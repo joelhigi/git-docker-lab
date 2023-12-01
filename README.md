@@ -9,3 +9,8 @@ Before starting, ensure that you have the following installed on your machine:
 - Node.js
 - npm (Node Package Manager)
 - MySQL Server
+- Docker
+
+## Steps to containerize the app
+
+Attend the SEC session to find out.

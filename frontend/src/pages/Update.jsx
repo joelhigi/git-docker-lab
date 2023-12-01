@@ -5,7 +5,7 @@ import {useLocation, useNavigate} from "react-router-dom"
 const Update=()=> {
   const [book,setBook]=useState({
     title:"",
-    desc:"",
+    descrip:"",
     price:null,
     cover:"",
   });
@@ -40,9 +40,9 @@ const Update=()=> {
       />
       <input
       type='text'
-      placeholder='Discription'
+      placeholder='Description'
       onChange={handleChange}
-      name='desc'
+      name='descrip'
       />
       <input
       type='number'
